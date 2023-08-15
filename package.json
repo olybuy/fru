@@ -1,0 +1,21 @@
+{
+  "name": "playwright_test",
+  "version": "1.0.0",
+  "description": "Test on playwright",
+  "main": "index.js",
+  "scripts": {
+    "generate:report": "allure generate ./allure-results --clean",
+    "start:report": "allure open ./allure-report",
+    "test:chrome": "npx playwright test /tests/ --workers 2 --headed --reporter=line,allure-playwright",
+    "test": "npm run test:chrome && npm run generate:report && npm run start:report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.37.0",
+    "allure-playwright": "^2.5.0",
+    "prettier": "3.0.1",
+    "winston": "^3.8.2"
+  }
+}
